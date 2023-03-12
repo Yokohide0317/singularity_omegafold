@@ -3,7 +3,7 @@ From: ubuntu:20.04
 
 %labels
     Maintainer Yoshihiro okuda
-    Version    v1.0
+    Version    v2.0
 
 %files
 
@@ -19,7 +19,7 @@ From: ubuntu:20.04
     cd ${INSTALLDIR}
     git clone https://github.com/HeliXonProtein/OmegaFold.git
     cd OmegaFold
-    git checkout refs/tags/v1.1.0
+    git checkout 313c873ad190b64506a497c926649e15fcd88fcd
 
     pip install -r requirements.txt
 

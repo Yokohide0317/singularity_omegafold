@@ -1,12 +1,13 @@
 # singularity_omegafold
 Ubuntu 20.04にomegafold v1.1.0をインストールしたsingularity imageを作成するためのSingularity definition fileです。
+313c873ad190b64506a497c926649e15fcd88fcd でチェックアウトし、`--model 2`オプションを使えるようにしました。
 ## imageのビルド
 ```
-$ sudo singularity build omegafold-1.1.0.sif Singularity
+$ sudo singularity build omegafold-1.2.0.sif Singularity
 ```
 ## 遺伝研スパコン login_gpu.qでの実行
 ```
-singularity exec --nv omegafold-1.1.0.sif python3 /opt/OmegaFold/main.py input.fasta output_dir
+singularity exec --nv omegafold-1.2.0.sif python3 /opt/OmegaFold/main.py input.fasta output_dir
 ```
 カレントディレクトリに output_dir が作成され、その中に結果が出力されます。
 
@@ -20,7 +21,7 @@ singularity exec --nv omegafold-1.1.0.sif python3 /opt/OmegaFold/main.py input.f
 #$ -l intel
 #$ -pe def_slot 16
 N=16
-singularity exec /home/y-okuda/singularity/omegafold/omegafold-1.1.0.sif \
+singularity exec /home/y-okuda/singularity/omegafold/omegafold-1.2.0.sif \
 sh -c "\
 export OMP_NUM_THREADS=${N}; \
 python3 /opt/OmegaFold/main.py \
