@@ -21,7 +21,8 @@ From: ubuntu:20.04
     cd OmegaFold
     git checkout 313c873ad190b64506a497c926649e15fcd88fcd
 
-    pip install -r requirements.txt
+    pip install biopython
+    pip install torch --extra-index-url https://download.pytorch.org/whl/cu116
 
     # 遺伝研スパコンのGPUでcuda11を使用できるように、対応するバージョンのnvidia driverをインストール
     cd /usr/local/src
@@ -42,8 +43,8 @@ From: ubuntu:20.04
     apt-get -y install libxml2-dev
     export TZ=Asia/Tokyo
     cd /usr/local/src
-    wget https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda_11.3.0_465.19.01_linux.run
-    chmod +x cuda_11.3.0_465.19.01_linux.run
-    ./cuda_11.3.0_465.19.01_linux.run --toolkit --silent
-    rm /usr/local/src/cuda_11.3.0_465.19.01_linux.run
+    wget https://developer.download.nvidia.com/compute/cuda/11.6.0/local_installers/cuda_11.6.0_510.39.01_linux.run
+    chmod +x cuda_11.6.0_510.39.01_linux.run
+    ./cuda_11.6.0_510.39.01_linux.run --toolkit --silent
+    rm /usr/local/src/cuda_11.6.0_510.39.01_linux.run
 
